@@ -37,6 +37,9 @@ if (isset($_GET['nav'])) {
         case 'reset-password':
             include("./controller/compte/resetpasswordController.php");
             break;
+        case 'accueil' :
+            include("./controller/accueilController.php");
+            break;
     }
 } else {
     include("./controller/accueilController.php");

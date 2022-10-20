@@ -1,3 +1,14 @@
+<?php  
+    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
+         $url = "https://";   
+    else  
+         $url = "http://";   
+    // Append the host(domain name, ip) to the URL.   
+    $url.= $_SERVER['HTTP_HOST'];   
+    
+    // Append the requested resource location to the URL   
+    $url.= $_SERVER['REQUEST_URI'];    
+?>
 <main>
 		<section id="intro">
 			<!-- <div id="wrapper"> -->
@@ -6,8 +17,8 @@
 			</div>
 			<div id="intro-img">
 				<img id="cityscape" src="./assets/img/illustrations/Molenbeek-scene-mobile-outline.svg"
-					alt="Paysage urbain de Molenbeek">
-			</div>
+					alt="Paysage urbain de Molenbeek"></div>
+
 			<!-- </div> -->
 			<div id="intro-text" class="text">
 				<p>Molenbeek est une des communes les plus passionnantes de Bruxelles.
@@ -32,11 +43,12 @@
 					<div class="slide slide-1">
 
 						<div class="card-item">
-							<div class="thumb thumb-1">
+							<div class="thumb thumb-1" style="background-image: url('<?php echo $url . "assets/img/itinéraire-maritime/maritime-sm/canal-soir-sm.jpeg";?>'); ">
 								<!--image here -->
 							</div>
 							<div class="description description-1">
 								<h3>Molenbeek maritime</h3>
+
 								<div>Autrefois centre de l’industrie lourde, le quartier du canal est aujourd’hui un
 									quartier
 									dynamique, créatif et durable.</div>
@@ -57,7 +69,7 @@
 
 					<div class="slide slide-2">
 						<div id="card-item-1" class="card-item">
-							<div class="thumb thumb-2">
+							<div class="thumb thumb-2" style="background-image: url('<?php echo $url . "assets/img/itinéraire-maritime/maritime-sm/fleurs-sm.jpeg";?>'); ">
 								<!--image here -->
 							</div>
 							<div class="description description-2">
@@ -81,7 +93,7 @@
 
 					<div class="slide slide-3">
 						<div class="card-item">
-							<div class="thumb thumb-3">
+							<div class="thumb thumb-3" style="background-image: url('<?php echo $url . "assets/img/itinéraire-maritime/maritime-sm/De_Vaartkapoen-sm.jpeg";?>'); ">
 								<!--image here -->
 							</div>
 							<div class="description description-3">

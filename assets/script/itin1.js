@@ -6,6 +6,14 @@ const map = L.map('mapid1').setView(centroid, 16.5);
 //Définition des couleurs des marqeurs
 let current_red = 0;
 
+const mk1 = new L.Icon({
+    iconUrl: 'assets/img/icons/markers/1.svg',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
 
 const greenIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
@@ -57,7 +65,8 @@ const popupTemplate = `
 `;
 
 const markers = DATA_ITIN1.map(d => [
-    L.marker([d.lat, d.lng], { icon: blueIcon}) 
+    // L.marker([d.lat, d.lng], { icon: blueIcon}) 
+    L.marker([d.lat, d.lng], { icon: mk1}) 
     .addTo(map)                                
     .bindPopup(popupTemplate
         .replace('__lieu__', d.lieu)
@@ -132,10 +141,18 @@ var polyline = L.polyline(latLng, {color: '#003366'}).addTo(map);
 
 const legende = document.querySelector(".legend-page-wrapper");
 const minimiseLegende = document.querySelector(".minimise-legende");
-
+const minimiseText = document.querySelector(".minimise-text");
 
 console.log(minimiseLegende, legende);
 
 minimiseLegende.addEventListener("click", function() {
     legende.classList.toggle("minimise");
+    legende.style.transition = "all 0.5s";
+    if (minimiseText.innerHTML === "Minimiser légende") {
+        minimiseText.innerHTML = "Afficher légende";
+    }
+
+else {
+    minimiseText.innerHTML = "Minimiser légende";
+}
 });
