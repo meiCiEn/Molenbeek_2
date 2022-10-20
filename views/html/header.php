@@ -11,7 +11,7 @@
 		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
 		crossorigin="" />
 	<!-- CSS : main (rassemble toutes les différentes feuilles de style) -->
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="./assets/css/main.css">
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.6.0.js"
 		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -20,19 +20,19 @@
 		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 		crossorigin=""></script>
 	<!-- JS : header / footer -->
-	<script src="assets/script/header.js" defer></script>
-	<script src="assets/script/footer.js" defer></script>
+	<script src="./assets/script/header.js" defer></script>
+	<script src="./assets/script/footer.js" defer></script>
 	<!-- JS : main -->
-	<script src="assets/script/main.js" defer></script>
+	<script src="./assets/script/main.js" defer></script>
 	<!-- JS : itinéraires -->
-	<script src="assets/script/itin1.js" defer></script>
-	<!-- <script src="assets/script/itin2.js" defer></script>
-	<script src="assets/script/itin3.js" defer></script> -->
-	<script src="assets/script/json1.js" defer></script>
-	<!-- <script src="assets/script/json2.js" defer></script>
-	<script src="assets/script/json3.js" defer></script> -->
+	<script src="./assets/script/itin1.js" defer></script>
+	<!-- <script src="./assets/script/itin2.js" defer></script>
+	<script src="./assets/script/itin3.js" defer></script> -->
+	<script src="./assets/script/json1.js" defer></script>
+	<!-- <script src="./assets/script/json2.js" defer></script>
+	<script src="./assets/script/json3.js" defer></script> -->
 	<!-- JS : slider -->
-	<script src="assets/script/slider.js" defer></script>
+	<script src="./assets/script/slider.js" defer></script>
     <!-- icônes fontawesome -->
     <script src="https://kit.fontawesome.com/f64cbb42a1.js" crossorigin="anonymous" defer></script>
 
@@ -44,7 +44,7 @@
 		<div class="menu">
 			<div class="menu__container">
 			  <a class="menu__logo" href="?nav=accueil">
-				<img src="assets/img/logos/logo-uni.svg" alt="logo">
+				<img src="./assets/img/logos/logo-uni.svg" alt="logo">
 			  </a>
 			  <div class="menu__items">
 				<a class="menu__item" href="?nav=accueil"><i class="fa-solid fa-house"></i></a>
