@@ -63,3 +63,7 @@
 </body>
 
 </html>
+
+
+<script src="./assets/script/itin2.js" defer></script>
+<script src="./assets/script/json2.js" defer></script>

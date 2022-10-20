@@ -1,4 +1,4 @@
-const DATA = [
+const DATA_ITIN1 = [
     { 
         lat: 50.859619,
         lng: 4.316703,

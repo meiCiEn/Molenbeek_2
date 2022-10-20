@@ -56,7 +56,7 @@ const popupTemplate = `
     Distance : __distance__km<br>Dénivelé : __dinivele  
 `;
 
-const markers = DATA.map(d => [
+const markers = DATA_ITIN1.map(d => [
     L.marker([d.lat, d.lng], { icon: blueIcon}) 
     .addTo(map)                                
     .bindPopup(popupTemplate
@@ -87,8 +87,8 @@ const linkTemplate = `<span class="clickable"><li>__lieu__</li></span>`;
 $(document).ready(function(){
 
 
-    for(let index in DATA) {
-        const link = $(linkTemplate.replace('__lieu__', DATA[index].lieu)).click(function (){
+    for(let index in DATA_ITIN1) {
+        const link = $(linkTemplate.replace('__lieu__', DATA_ITIN1[index].lieu)).click(function (){
             update_markers(index);
         });
         $('.links').append(link);

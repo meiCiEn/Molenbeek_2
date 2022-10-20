@@ -41,3 +41,6 @@
 		</div>
 
 	</section>
+
+	<script src="./assets/script/json1.js" defer></script>
+	<script src="./assets/script/itin1.js" defer></script>

@@ -15,11 +15,3 @@ function changePic(x) {
     }
   }
   
-  let x = window.matchMedia("(min-width: 1025px)");
-  changePic(x); // appeler la fonction changePic() quand la taille d'écran dépasse 1025px
-
-// recharger la page lorsque l'écran est redimensionné
-  window.addEventListener('resize', function () { 
-    "use strict";
-    window.location.reload(); 
-});

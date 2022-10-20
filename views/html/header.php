@@ -22,20 +22,28 @@
 	<!-- JS : header / footer -->
 	<script src="./assets/script/header.js" defer></script>
 	<script src="./assets/script/footer.js" defer></script>
-	<!-- JS : main -->
-	<script src="./assets/script/main.js" defer></script>
+
 	<!-- JS : itinéraires -->
-	<script src="./assets/script/itin1.js" defer></script>
-	<!-- <script src="./assets/script/itin2.js" defer></script>
-	<script src="./assets/script/itin3.js" defer></script> -->
-	<script src="./assets/script/json1.js" defer></script>
-	<!-- <script src="./assets/script/json2.js" defer></script>
-	<script src="./assets/script/json3.js" defer></script> -->
-	<!-- JS : slider -->
-	<script src="./assets/script/slider.js" defer></script>
+	
+
+
+
+
+
+
     <!-- icônes fontawesome -->
     <script src="https://kit.fontawesome.com/f64cbb42a1.js" crossorigin="anonymous" defer></script>
+	<script defer>
+		let x = window.matchMedia("(min-width: 1025px)");
+		changePic(x); // appeler la fonction changePic() quand la taille d'écran dépasse 1025px
 
+		// recharger la page lorsque l'écran est redimensionné
+		window.addEventListener('resize', function () { 
+			"use strict";
+			window.location.reload(); 
+		});
+
+	</script>
 </head>
 
 <body>
