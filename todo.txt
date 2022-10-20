@@ -6,3 +6,7 @@
 
 
 Bonjour test commit loic
+
+
+commande pour compiler le sass : 
+sass --watch assets/sass:assets/css
