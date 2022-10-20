@@ -1,61 +1,16 @@
-
-
-    <main>
-        <div class="page-wrapper-login">
-            <form class="form" id="form-login" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <!-- <form class="form" method="post" action="?nav=accueil.php"> -->
-                <h2>Login</h2>
-                <div class="form__fields">
-                <span>* le champ est requis</span>
-                <div class="input-group">
-                        <label for="prenom" class="input-group__label">Prénom :</label>
-                        <input type="text" name="prenom" id="prenom" class="input-group__input" placeholder="Entrez votre prénom" value="<?php echo $prenom;?>" required>
-                        <span class="error">* <?php echo $prenomErr;?></span>
-                    </div>
-                    <div class="input-group">
-                        <label for="nom" class="input-group__label">Nom de famille :</label>
-                        <input type="text" name="nom" id="nom" class="input-group__input" placeholder="Entrez votre nom de famille" value="<?php echo $nom;?>" required>
-                        <span class="error">* <?php echo $nomErr;?></span>
-                    </div>
-                    <div class="input-group">
-                        <label for="mail" class="input-group__label">Adresse mail :</label>
-                        <input type="email" name="email" id="email" class="input-group__input" placeholder="Entrez votre adresse e-mail" value="<?php echo $email;?>" required>
-                        <span class="error">* <?php echo $emailErr;?></span>
-                    </div>
-                    <div class="input-group">
-                        <label for="password" class="input-group__label">Mot de passe :</label>
-                        <input type="password" name="password" id="password" class="input-group__input" placeholder="Entrez votre mot de passe"
-                            required>
-                            <span class="error">* <?php echo $nameErr;?></span>
-                    </div>
-                    <span class="form__help"><a href="?nav=forgot-password">
-                    Mot de passe oublié ?
-                </a></span>
-                </div>
-
-                <!-- Démarrer la session - que mettre ici ?? -->
-
-                <div class="button-wrapper form__submit">
-                <a href="#"><input class="btn btn--dark" type="submit" name="submit" id="btn-connect" value="Connectez-vous"></a>
-                </div>
-
-                <span class="form__help">
-                Nouvel utilisateur ? <a href="?nav=subscribe">Créez un compte ici
-                </a></span>
-                
-
-            </form>
-
-        </div>
-        </main>
-
-
-    <?php
+<?php
 // define variables and set to empty values
 $prenomErr = $nomlErr = $emailErr = $passwordErr = "";
 $prenom = $nom = $email = $password = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+echo $prenomErr;
+echo $nomlErr;
+echo $emailErr;
+echo $passwordErr;
+
+
+
+if (!empty($_POST)) {
     if (empty($_POST["prenom"])) {
       $prenomErr = "Vous devez entrer votre prénom";
     } else {
@@ -117,6 +72,58 @@ echo $nom;
 echo "<br>";
 echo $email;
 ?>
+
+
+<main>
+    <div class="page-wrapper-login">
+        <form class="form" id="form-login" method="post" action="#">
+        <!-- <form class="form" method="post" action="?nav=accueil.php"> -->
+            <h2>Login</h2>
+            <div class="form__fields">
+            <span>* le champ est requis</span>
+            <div class="input-group">
+                    <label for="prenom" class="input-group__label">Prénom :</label>
+                    <input type="text" name="prenom" id="prenom" class="input-group__input" placeholder="Entrez votre prénom" value="<?php echo $prenom;?>" >
+                    <span class="error">* <?=(isset($prenomErr)) ? $prenomErr : ''?></span>
+                </div>
+                <div class="input-group">
+                    <label for="nom" class="input-group__label">Nom de famille :</label>
+                    <input type="text" name="nom" id="nom" class="input-group__input" placeholder="Entrez votre nom de famille" value="<?php echo $nom;?>" >
+                    <span class="error">* <?=(isset($nomErr)) ? $nomErr : ''?></span>
+                </div>
+                <div class="input-group">
+                    <label for="mail" class="input-group__label">Adresse mail :</label>
+                    <input type="email" name="email" id="email" class="input-group__input" placeholder="Entrez votre adresse e-mail" value="<?php echo $email;?>" >
+                    <span class="error">* <?=(isset($emailErr)) ? $emailErr : ''?></span>
+                </div>
+                <div class="input-group">
+                    <label for="password" class="input-group__label">Mot de passe :</label>
+                    <input type="password" name="password" id="password" class="input-group__input" placeholder="Entrez votre mot de passe">
+                        <span class="error">* <?=(isset($nameErr)) ? $nameErr : ''?></span>
+                </div>
+                <span class="form__help"><a href="?nav=forgot-password">
+                Mot de passe oublié ?
+            </a></span>
+            </div>
+
+            <!-- Démarrer la session - que mettre ici ?? -->
+
+            <div class="button-wrapper form__submit">
+            <a href="#"><input class="btn btn--dark" type="submit" name="submit" id="btn-connect" value="Connectez-vous"></a>
+            </div>
+
+            <span class="form__help">
+            Nouvel utilisateur ? <a href="?nav=subscribe">Créez un compte ici
+            </a></span>
+            
+
+        </form>
+
+    </div>
+</main>
+
+
+
 
 
 <script>
