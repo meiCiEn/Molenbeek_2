@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +12,7 @@
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
 		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
 		crossorigin="" />
+
 	<!-- CSS : main (rassemble toutes les différentes feuilles de style) -->
 	<link rel="stylesheet" href="./assets/css/main.css">
 	<!-- jQuery -->
@@ -33,17 +36,7 @@
 
     <!-- icônes fontawesome -->
     <script src="https://kit.fontawesome.com/f64cbb42a1.js" crossorigin="anonymous" defer></script>
-	<script defer>
-		let x = window.matchMedia("(min-width: 1025px)");
-		changePic(x); // appeler la fonction changePic() quand la taille d'écran dépasse 1025px
 
-		// recharger la page lorsque l'écran est redimensionné
-		window.addEventListener('resize', function () { 
-			"use strict";
-			window.location.reload(); 
-		});
-
-	</script>
 </head>
 
 <body>

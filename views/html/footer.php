@@ -44,7 +44,15 @@
                 </ul>
             </div>
     </footer>
+	<script>
 
+		// recharger la page lorsque l'écran est redimensionné
+		window.addEventListener('resize', function () { 
+			"use strict";
+			window.location.reload(); 
+		});
+
+	</script>
 </body>
 
 </html>

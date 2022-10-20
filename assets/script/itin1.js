@@ -140,12 +140,11 @@ var polyline = L.polyline(latLng, {color: '#003366'}).addTo(map);
 // légende
 
 const legende = document.querySelector(".legend-page-wrapper");
-const minimiseLegende = document.querySelector(".minimise-legende");
 const minimiseText = document.querySelector(".minimise-text");
 
-console.log(minimiseLegende, legende);
+console.log( `minimiseText : `, minimiseText, `legende : `, legende);
 
-minimiseLegende.addEventListener("click", function() {
+minimiseText.addEventListener("click", function() {
     legende.classList.toggle("minimise");
     legende.style.transition = "all 0.5s";
     if (minimiseText.innerHTML === "Minimiser légende") {

@@ -4,6 +4,9 @@ const cityscape = document.getElementById("cityscape");
 const logo = document.querySelector("#intro-title img");
 console.log(logo, cityscape);
 
+let x = window.matchMedia("(min-width: 1025px)");
+		changePic(x); // appeler la fonction changePic() quand la taille d'écran dépasse 1025px
+
 function changePic(x) {
 
     if (x.matches) { // Si le media query correspond, changez le src de img#cityscape.
