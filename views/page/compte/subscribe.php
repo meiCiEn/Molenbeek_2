@@ -1,6 +1,29 @@
+ <?php
+session_start();
+
+$baseDeDonnees = 'membres.sql';
+
+if(isset($_POST['Enregistrer'])){
+
+        if(!empty($_POST['mail']) AND !empty($_POST ['password'])){
+
+            $mail = htmlspecialchars($_POST['mail']);//htmlspecialchars est une sécurité qui permet d'éviter que l'utilisateur incorpore du code malvéillant
+            $psw = sha1($_POST['password']);//sha1 est un système de cryptage de mot de passe
+            $insertUser = $baseDeDonnees->prepare ('INSERT INTO users(mail, password)VALUES (?, ?)');
+            $insertUser->execute (array($mail, $psw));
+
+        }else{
+
+            echo "Veuillez complétez tous les champs";
+
+        }
+
+}
+?>
+ 
  <main>
         <div class="page-wrapper-login">
-            <form action="register.php" method="post" class="form">
+            <form action="" method="post" class="form">
                 <h2>Inscription</h2>
                 <div class="form__fields">
                     <div class="input-group">
