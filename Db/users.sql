@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : mer. 12 oct. 2022 à 11:24
+-- Généré le : ven. 21 oct. 2022 à 11:20
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -24,15 +24,13 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `membres`
+-- Structure de la table `users`
 --
 
-CREATE TABLE `membres` (
-  `id` int(50) NOT NULL,
-  `nom` varchar(50) NOT NULL,
-  `prenom` varchar(50) NOT NULL,
-  `password` text NOT NULL,
-  `mail` int(50) NOT NULL
+CREATE TABLE `users` (
+  `id` int(100) NOT NULL,
+  `mail` text NOT NULL,
+  `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -40,9 +38,9 @@ CREATE TABLE `membres` (
 --
 
 --
--- Index pour la table `membres`
+-- Index pour la table `users`
 --
-ALTER TABLE `membres`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -50,10 +48,10 @@ ALTER TABLE `membres`
 --
 
 --
--- AUTO_INCREMENT pour la table `membres`
+-- AUTO_INCREMENT pour la table `users`
 --
-ALTER TABLE `membres`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `users`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

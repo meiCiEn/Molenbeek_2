@@ -1,7 +1,8 @@
  <?php
-session_start();
+session_start();//Création de la session
 
-$baseDeDonnees = 'membres.sql';
+$baseDeDonnees = new PDO('mysql:host=lacalhost;dbname=membres;charset=utf8;', 'root', 'root');
+//$baseDeDonnees = 'membres.sql';
 
 if(isset($_POST['Enregistrer'])){
 
@@ -9,8 +10,22 @@ if(isset($_POST['Enregistrer'])){
 
             $mail = htmlspecialchars($_POST['mail']);//htmlspecialchars est une sécurité qui permet d'éviter que l'utilisateur incorpore du code malvéillant
             $psw = sha1($_POST['password']);//sha1 est un système de cryptage de mot de passe
-            $insertUser = $baseDeDonnees->prepare ('INSERT INTO users(mail, password)VALUES (?, ?)');
-            $insertUser->execute (array($mail, $psw));
+            $insertUser = $baseDeDonnees->prepare ('INSERT INTO users(mail, password)VALUES (?, ?)');//Pour ajouter l'utilisateur ds la BD avec les valeurs: mail et mot de passe
+            $insertUser->execute (array($mail, $psw));//Execute la requete pour mettre les val ds un tableau
+
+            $recupUser = $baseDeDonnees->prepare ('SELECT * FROM users WHERE mail = ? AND password = ?');//Récup le mail et le mdp
+            $recupUser->execute(array($mail, $psw));
+
+            if($recupUser->rowCount() > 0){//Si le user existe est sup à 0, on récup l'id
+
+                //Déclaration session, afin recupérer l'id au niveau de la table
+                $_SESSION['mail'] = $mail;
+                $_SESSION['password'] = $psw;
+                $_SESSION[id] = $recupUser->fetch()['id'];//fetch recupère l'id
+
+            }
+
+            echo $_SESSION['id'];//Affiche session id.
 
         }else{
 
