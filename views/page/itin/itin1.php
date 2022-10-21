@@ -1,3 +1,12 @@
+// 
+<?php 
+// trouve le chemin du serveur et du répertoire racine
+    $path = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
+    $path .=$_SERVER["SERVER_NAME"]. dirname($_SERVER["PHP_SELF"]);        
+    echo $path;
+
+// Utiliser <?php echo $path . "... "; pour des liens ?>
+
 	<section class="section">
 
 		<div class="map-container">
@@ -45,11 +54,11 @@
 
 		<div class="info-container">
 
-			<div class="thumb thumb-1" style="background-image: url('<?php echo $url . "assets/img/itinéraire-maritime/maritime-sm/canal-soir-sm.jpeg"; ?>'); ">
+			<div class="thumb thumb-1" style="background-image: url('<?php echo $path . "/assets/img/itin3/karreveld.JPG"; ?>'); ">
 				<!--image here -->
 			</div>
 			<div class="description description-1">
-				<h3>Molenbeek maritime</h3>
+				<h3>Parc du Karreveld</h3>
 
 				<div>Autrefois centre de l’industrie lourde, le quartier du canal est aujourd’hui un
 					quartier

@@ -43,7 +43,7 @@
 					<div class="slide slide-1">
 
 						<div class="card-item">
-							<div class="thumb thumb-1" style="background-image: url('<?php echo $url . "assets/img/itinéraire-maritime/maritime-sm/canal-soir-sm.jpeg";?>'); ">
+							<div class="thumb thumb-1" style="background-image: url('<?php echo $url . "assets/img/itin-maritime/maritime-sm/canal-soir-sm.jpeg";?>'); ">
 								<!--image here -->
 							</div>
 							<div class="description description-1">
@@ -69,7 +69,7 @@
 
 					<div class="slide slide-2">
 						<div id="card-item-1" class="card-item">
-							<div class="thumb thumb-2" style="background-image: url('<?php echo $url . "assets/img/itinéraire-maritime/maritime-sm/fleurs-sm.jpeg";?>'); ">
+							<div class="thumb thumb-2" style="background-image: url('<?php echo $url . "assets/img/itin-maritime/maritime-sm/fleurs-sm.jpeg";?>'); ">
 								<!--image here -->
 							</div>
 							<div class="description description-2">
@@ -93,7 +93,7 @@
 
 					<div class="slide slide-3">
 						<div class="card-item">
-							<div class="thumb thumb-3" style="background-image: url('<?php echo $url . "assets/img/itinéraire-maritime/maritime-sm/De_Vaartkapoen-sm.jpeg";?>'); ">
+							<div class="thumb thumb-3" style="background-image: url('<?php echo $url . "assets/img/itin-maritime/maritime-sm/De_Vaartkapoen-sm.jpeg";?>'); ">
 								<!--image here -->
 							</div>
 							<div class="description description-3">

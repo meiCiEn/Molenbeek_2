@@ -1,3 +1,3 @@
 <?php 
-include("views/page/itineraire/itin2.php");
+include("views/page/itin/itin2.php");
 ?>
