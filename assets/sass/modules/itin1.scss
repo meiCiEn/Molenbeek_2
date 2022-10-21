@@ -175,77 +175,101 @@ z-index: -1;
 
 // popups
 
-.info-container {
-position: absolute;
-z-index: 1000;
-}
-
-.info-container {
+.popup-container {
   right: 30px;
   top: 50px;
-  background: white;
-}
-
-.info-container {
+  position: absolute;
+  z-index: 1000;
   overflow: hidden;
-  margin: 20px 10px 20px 10px;
   border-radius: 10px;
   height: 670px;
   width: 390px;
   flex-wrap: wrap;
   flex-direction: row;
+  font-size: 1rem;
+  background: $bg1;
+    align-content: flex-start;
+    @include box_shadow(1, 'bottom');
+}
 
-  .thumb {
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 80vw;
-    height: 230px;
+
+.popup-container__x {
+position: relative;
+width: 0;
+font-size: 2.2rem;
+color: white;
+top: 10px;
+left: 350px;
+}
+
+.popup-container__thumb {
+    height: 300px;
+    width: 100%;
     z-index: 0;
+    // background-image: url('<?php echo $path . "/assets/img/itin3/karreveld.jpg"; ?>'); 
 
-    &.thumb-1 {
-      background-image: url("../assets/img/itinéraire-maritime/maritime-sm/canal-soir-sm.jpeg");
-    }
-
-    &.thumb-2 {
-      background-image: url("../assets/img/itinéraire-maritime/maritime-sm/fleurs-sm.jpeg");
-    }
-
-    &.thumb-3 {
-      background-image: url("../assets/img/itinéraire-maritime/maritime-sm/De_Vaartkapoen-sm.jpeg");
+    &.popup-container__thumb--1 {
+      
     }
 
   }
 
-  .description {
+  .popup-container__img {
+    min-width: 100%;
+    height:  100%;
+    object-fit: cover;
+    border-bottom: 5px solid $route1;
+  }
+
+  .popup-container__info {
     max-width: 100%;
-    padding: 20px 20px 30px 20px;
-    background: $route1;
-    font-size: 14px;
-    color: $bg1;
+    height: calc(100% - 390px);
+    padding: 0 30px;
+    background: $bg1;
+    font-size: inherit;
+    color: $text;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: space-between;
+    align-content: flex-start;
 
-
-    &.description-1 {
-      background: $route1;
-    }
-
-    &.description-2 {
-      background: $route2;
-    }
-
-    &.description-3 {
-      background: $route3;
-    }
-
-    h3 {
+  }
+    .popup-container__title {
       width: 100%;
       text-align: center;
+      height: 50px;
+      margin-top: 30px;
+    }
+
+
+
+    /* Could not find the original style sheet. */
+.popup-container__website {
+  height: 70px;
+  flex-direction: row;
+  align-items: center;
+
+  a {
+    color: $bg3;
+
+    &:hover, &:active {
+      text-decoration: underline;
     }
   }
 }
+
+.popup-container__globe {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 2rem;
+}
+
+    .popup-container__description {
+flex-direction: column;
+p {
+  margin: 10px 0;
+}
+    }
+
 
 .filter {
   margin: 15px 5px;
