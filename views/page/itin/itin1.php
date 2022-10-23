@@ -14,6 +14,7 @@ echo $path;
 		<!--<div id="map" class="map"></div>-->
 		<div id="mapid1" class="container-fluid"></div>
 	</div>
+	<div id="popup-card" class="popup-card"></div>
 	<div class="legend-page-wrapper minimise-legende">
 
 		<div class="title-box">
@@ -53,24 +54,28 @@ echo $path;
 	</div>
 
 
-	<div class="popup-container info-container">
+	<div class="popup-container">
 
-		<!-- <div class="popup-container__thumb" style="background-image: url('<?php // echo $path . "/assets/img/itin3/karreveld.jpg"; 
-																				?>'); "> -->
-		<!--image here -->
+	</div>
 
-		<div class="popup-container__thumb"><i class="popup-container__x fa-solid fa-xmark"></i><img class="popup-container__img" src="<?php echo $path . "/assets/img/itin3/karreveld.jpg"; ?>" alt="Parc du Karreveld"></div>
-		<div class="popup-container__info">
-			<h3 class="popup-container__title">Parc du Karreveld</h3>
-			<div class="popup-container__description">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<p>Sagittis id consectetur purus ut faucibus pulvinar elementum integer.</p>
-			</div>
-			<div class="popup-container__website">
-				<i class="popup-container__globe fa-solid fa-globe"></i><a href="https://www.scheutbos.be/pages/les-sites-voisins/parc-du-karreveld.html" target="_blank">Parc du Karreveld</a>
-			</div>
-			<!-- <div class="btn-wrapper-1"><button class="btn btn-dark"></button></div> -->
-		</div>
+	<!-- popupCard.innerHTML = `
+    <div class="popup-container">
+    <div class="popup-container__thumb">
+    <i class="popup-container__x fa-solid fa-xmark"></i>
+    <img class="popup-container__img" src="${DATA_ITIN2.items[i].image}" alt="${DATA_ITIN2.items[i].alt}">
+    </div>
+    <div class="popup-container__info">
+        <h3 class="popup-container__title">${DATA_ITIN2.items[i].lieu}</h3>
+        <div class="popup-container__description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    
+            <p>Distance : <span>${DATA_ITIN2.items[i].distance}km</span></p>
+            </div>
+        <div class="popup-container__website">
+            <i class="popup-container__globe fa-solid fa-globe"></i><a href="${DATA_ITIN2.items[i].distance}" target="_blank">Parc du Karreveld</a>
+        </div>
+    </div>
+    </div>`; -->
 
 </section>
 

@@ -641,10 +641,42 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
  // my stuff
 
- .leaflet-popup {
-    height: 670px;
-    width: 390px;
-    position: absolute;
-    top: -100px;
+ .leaflet-container {
+font-family: $font-main;
   }
   
+
+  .leaflet-popup.leaflet-zoom-animated {
+	opacity: 1;
+	transform: translate3d(645px, 436px, 0px);
+	bottom: 343px;
+	left: 107px;
+  }
+  
+  .leaflet-popup-content-wrapper {
+	padding: 0;
+	border-radius: 0;
+	padding: 0;
+  }
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+	background: transparent;
+	color: $text;
+	box-shadow: none;
+	position: fixed;
+  }
+
+leaflet-popup-close-button {
+	display: none;
+}
+
+leaflet-popup-tip-container {
+	display: none;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+	display: none;
+}
+
+.red-border  {
+	border: solid red 5px;
+}

@@ -2,11 +2,13 @@ const DATA_ITIN1 = [
     { 
         lat: 50.859619,
         lng: 4.316703,
-        lieu: 'Parc du Karrveld',
-        image: 'assets/img/itinéraire1/karreveld.JPG',
+        lieu: 'Parc du Karreveld',
+        alt: 'Parc du Karreveld',
+        image: 'assets/img/itin3/karreveld.jpg',
         distance: 7.5,
         denivele: null,
-        difficulte: 'facile'
+        difficulte: 'facile', 
+        website: 'https://www.scheutbos.be/pages/les-sites-voisins/parc-du-karreveld.html'
 
     },
     { 
@@ -64,4 +66,6 @@ const DATA_ITIN1 = [
         difficulte: 'difficile'          
     }
 ]
+
+
     
