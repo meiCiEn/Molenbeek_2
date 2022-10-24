@@ -169,7 +169,7 @@ let DATA_ITIN_2 = {
     { 
         lat: 50.85533107240288,
         lng: 4.3386152723646605,
-        lieu: `Administration communale de Molenbeek`,
+        lieu: `Administration communale`,
         alt: `Administration communale de Molenbeek`,
         image: `assets/img/itin2/maritime-lg/Maison_Communale_2.jpeg`,
         distance: 7.5,
@@ -281,7 +281,7 @@ let DATA_ITIN_2 = {
     {
         lat: 50.85580918983987,
         lng: 4.343160722759251,
-        lieu: `Le Chien du Chien / Les tissus du chien vert`,
+        lieu: `Le Chien du Chien`,
         alt: `Le Chien du Chien / Les tissus du chien vert`,
         image: `assets/img/itin2/maritime-sm/chien2-sm.jpeg`,
         distance: 8,
@@ -309,7 +309,7 @@ let DATA_ITIN_2 = {
     {
         lat: 50.85906204560511,
         lng: 4.3454303336194275,
-        lieu: `Monument aux Promoteurs des Installations Maritimes`,
+        lieu: `Monument aux Promoteurs`,
         alt: `Monument aux Promoteurs des Installations Maritimes`,
         image: `assets/img/itin2/maritime-sm/Monument_aux_Promoteurs-sm.jpeg`,
         distance: 8,
@@ -351,7 +351,7 @@ let DATA_ITIN_2 = {
     {
         lat: 50.85778152952077,
         lng: 4.338111889811175,
-        lieu: `Académie de Dessin et des Arts Visuels`,
+        lieu: `Académie de Dessin`,
         alt: `Académie de Dessin et des Arts Visuels`,
         image: `ssets/img/itin2/maritime-sm/Academie_de_dessin-sm.jpeg`,
         distance: 8,
@@ -365,7 +365,7 @@ let DATA_ITIN_2 = {
     {
         lat: 50.85799147811224,
         lng: 4.339367163590906,
-        lieu: `Maison des Cultures et de la Cohésion Sociale`,
+        lieu: `Maison des Cultures`,
         alt: `Maison des Cultures et de la Cohésion Sociale`,
         image: `assets/img/itin2/maritime-sm/Maison_des_cultures_1-sm`,
         distance: 8,
