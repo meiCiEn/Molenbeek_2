@@ -1,3 +1,11 @@
+// DONE : Générer le conteneur popup ; 
+// DONE : cacher le popup ;
+// DONE : événement clic sur le marqueur : ajout d'une classe au conteneur popup
+// DONE : changer les contenus de chaque popup à l'aide des données du tableau DATS_ITIN_1
+// DONE fermer le pop up lorsque X est cliqué
+// TODO lier les éléments de la liste de légende avec les marqueurs sur la carte.
+// TODO Choisir le bon marqueur pour chaque marqueur (mettre les fichiers de marqueurs dans un tableau et associer le numéro 1 au premier marqueur, etc.)
+
 // Création de la map numéro 1:
 
 const centroid = [50.859619, 4.316703];
@@ -6,67 +14,210 @@ const map = L.map('mapid1').setView(centroid, 16.5);
 //Définition des couleurs des marqeurs
 let current_red = 0;
 
+let markers_itin = {
+    dimensions: [{
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }],
+    imgs: [{
+    }]
+};
+    
+markers_itin.imgs.push(
+'assets/img/icons/markers/1.svg',
+'assets/img/icons/markers/2.svg', 
+'assets/img/icons/markers/3.svg', 
+'assets/img/icons/markers/4.svg',
+'assets/img/icons/markers/5.svg',
+'assets/img/icons/markers/6.svg',
+'assets/img/icons/markers/7.svg',
+'assets/img/icons/markers/8.svg',
+'assets/img/icons/markers/9.svg',
+'assets/img/icons/markers/10.svg',
+'assets/img/icons/markers/11.svg',
+'assets/img/icons/markers/12.svg',
+'assets/img/icons/markers/13.svg',
+'assets/img/icons/markers/14.svg',
+'assets/img/icons/markers/15.svg',
+'assets/img/icons/markers/16.svg',
+'assets/img/icons/markers/17.svg',
+'assets/img/icons/markers/18.svg',
+'assets/img/icons/markers/19.svg',
+'assets/img/icons/markers/20.svg',
+'assets/img/icons/markers/21.svg',
+'assets/img/icons/markers/22.svg',
+'assets/img/icons/markers/23.svg',
+'assets/img/icons/markers/24.svg',
+'assets/img/icons/markers/25.svg'
+);
+
+// Créer un tableau de marqueurs
+let mks = [];
+let len = markers_itin.imgs.length;
+console.log(len);
+
+for (let i = 0; i < len; i++) {
+    mks.push({
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41],
+        iconUrl: `${markers_itin.imgs[i]}`,
+        markerID: `mk${[i]}`
+    });
+}
+
+console.log(mks);
+
+// Mettre les marqueurs dans les variables
+
 const mk1 = new L.Icon({
-    iconUrl: 'assets/img/icons/markers/1.svg',
-    // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41],
+        iconUrl: `${markers_itin.imgs[1]}`,
+        markerID: `mk${[1]}`
+});
+
+const mk2 = new L.Icon({
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-  });
+    shadowSize: [41, 41],
+    iconUrl: `${markers_itin.imgs[2]}`,
+    markerID: `mk${[2]}`
+});
 
-const greenIcon = new L.Icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+const mk3 = new L.Icon({
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-  });
+    shadowSize: [41, 41],
+    iconUrl: `${markers_itin.imgs[3]}`,
+    markerID: `mk${[3]}`
+});
 
-const redIcon = new L.Icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+const mk4 = new L.Icon({
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-  });
+    shadowSize: [41, 41],
+    iconUrl: `${markers_itin.imgs[4]}`,
+    markerID: `mk${[4]}`
+});
 
-  const blueIcon = new L.Icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+const mk5 = new L.Icon({
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-  });
+    shadowSize: [41, 41],
+    iconUrl: `${markers_itin.imgs[5]}`,
+    markerID: `mk${[5]}`
+});
 
-// Add OSM tiles:
-//L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+const mk6 = new L.Icon({
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+    iconUrl: `${markers_itin.imgs[6]}`,
+    markerID: `mk${[6]}`
+});
+
+const mk7 = new L.Icon({
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+    iconUrl: `${markers_itin.imgs[7]}`,
+    markerID: `mk${[7]}`
+});
+
+const mk8 = new L.Icon({
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+    iconUrl: `${markers_itin.imgs[8]}`,
+    markerID: `mk${[8]}`
+});
+
+markerArray = [mk1, mk2, mk3, mk4, mk5, mk6, mk7, mk8];
+
+// Icônes alternatives
+
+// const greenIcon = new L.Icon({
+//     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+//     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+//     iconSize: [25, 41],
+//     iconAnchor: [12, 41],
+//     popupAnchor: [1, -34],
+//     shadowSize: [41, 41]
+//   });
+
+// const redIcon = new L.Icon({
+//     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+//     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+//     iconSize: [25, 41],
+//     iconAnchor: [12, 41],
+//     popupAnchor: [1, -34],
+//     shadowSize: [41, 41]
+//   });
+
+//   const blueIcon = new L.Icon({
+//     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+//     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+//     iconSize: [25, 41],
+//     iconAnchor: [12, 41],
+//     popupAnchor: [1, -34],
+//     shadowSize: [41, 41]
+//   });
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
 }).addTo(map);
 
-//Ajout de POI: cfr:json1.js
-
-
 //Récupération des id pour créer une fonction qui permet de cliquer sur les liens:
+
+let pointsList = document.querySelector(".points-list");
+let spanIds = [];
+
+for(var i = 1; i <= 15; i++) {
+  var id = "image" + i;
+  elements.push(document.getElementById(id));
+}
+
+linksList = document.createElement("ol");
+linksList.className = "links";
+pointsList.appendChild(linksList);
+// let span = [`span1`, `span2`, `span3`, `span4`];
+for (let index = 0; index < array.length; index++) {
+    let span = document.createElement("span");
+    span.className = "clickable";
+    linksList.appendChild("span");
+    document.createElement("span");
+}
+
+var elements = [];
+
+for(let i = 1; i <= 15; i++) {
+  var spanId = "span" + i;
+  elements.push(document.getElementById(id));
+}
 
 const linkTemplate = `<span class="clickable"><li>__lieu__</li></span>`;
 
 $(document).ready(function(){
 
-
     for(let index in DATA_ITIN1) {
         const link = $(linkTemplate.replace('__lieu__', DATA_ITIN1[index].lieu)).click(function (){
             update_markers(index);
-            // alert("Hello! This works."); NOT WORKING!
         });
         $('.links').append(link);
-
     }
     });
     
@@ -103,20 +254,7 @@ var polyline = L.polyline(latLng, {color: '#003366'}).addTo(map);
 
 const legende = document.querySelector(".legend-page-wrapper");
 const minimiseText = document.querySelector(".minimise-text");
-// function callback(mutationList, observer) {
-//     mutationList.forEach(function(mutation) {
-//       if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-//         // handle class change
-//       }
-//     })
-//   }
-
-  
-  // La div où une classe sera ajouté lorsque l'utilisateur clique sur un marqueur
-  const divClassChange = document.querySelector(".leaflet-popup");
-
-  
-console.log( `minimiseText : `, minimiseText, `legende : `, legende);
+const divClassChange = document.querySelector(".leaflet-popup");
 
 minimiseText.addEventListener("click", function() {
     legende.classList.toggle("minimise");
@@ -130,8 +268,9 @@ else {
 }
 });
 
+// Données pour chaque point
 
-const DATA_ITIN2 = {
+let DATA_ITIN_1 = {
     routeInfo: [{
         distance: 8, // distance du trajet
         time: 2, // temps du trajet
@@ -155,7 +294,7 @@ const DATA_ITIN2 = {
         lng: 4.310880,
         lieu: `Cimetière de Molenbeek`,
         alt: `Cimetière de Molenbeek`,
-        image: `assets/img/itin1/cimetiere.JPG`,
+        image: `assets/img/itin1/cimetiere_card.JPG`,
         distance: 7.5,
         denivele: null,
         difficulte: `facile`, 
@@ -167,7 +306,7 @@ const DATA_ITIN2 = {
         lat: 50.857926,
         lng: 4.308880,
         lieu: `Quartier Diongre`,
-        image: `assets/img/itin1/quartierDiongre.JPG`,
+        image: `assets/img/itin1/diongre_card.JPG`,
         distance: 8,
         denivele: null,
         difficulte: `difficile`,
@@ -179,7 +318,7 @@ const DATA_ITIN2 = {
         lat: 50.855942,
         lng: 4.311382,
         lieu: `Stade Edmond Machtens`,
-        image: `assets/img/itin1/stade.jpeg`,
+        image: `assets/img/itin1/stade_card.jpg`,
         distance: 8,
         denivele: null,
         difficulte: `difficile`,
@@ -192,7 +331,7 @@ const DATA_ITIN2 = {
         lat: 50.854320,
         lng: 4.316353,
         lieu: `Parc des Muses`,
-        image: `assets/img/itin1/parcDesMuses.JPG`,
+        image: `assets/img/itin1/parc-des-muses_card.JPG`,
         distance: 8,
         denivele: null,
         difficulte: `difficile`,
@@ -204,7 +343,7 @@ const DATA_ITIN2 = {
         lat: 50.851194,
         lng: 4.313364,
         lieu: `Parc Albert & Marie-José`,
-        image: `assets/img/itin1/parcAlbert&MJ.JPG`,
+        image: `assets/img/itin1/parc-albert_card.JPG`,
         distance: 8,
         denivele: null,
         difficulte: `difficile`,
@@ -216,7 +355,7 @@ const DATA_ITIN2 = {
         lat: 50.851597,
         lng: 4.300140,
         lieu: `Parc Scheutbos`,
-        image: `assets/img/itin1/parcScheutbos.JPG`,
+        image: `assets/img/itin1/scheutbos_card.JPG`,
         distance: 8,
         denivele: null,
         difficulte: `difficile`,
@@ -226,30 +365,11 @@ const DATA_ITIN2 = {
     }]
 };
 
-console.log(DATA_ITIN2.items);
-
-// get information for a particular item
-const item_lat = DATA_ITIN2.items[1].lat;
+// obtenir des informations sur un élément particulier
+const item_lat = DATA_ITIN_1.items[1].lat;
 console.log(item_lat);
 
-
-
-//loop through array and get info on all items
-DATA_ITIN2.items.forEach(item => {
-for (let key in item) {
-      console.log(`${key}: ${item[key]}`)
-    }
-});
-//TODO Generate popup container; 
-//TODO set to height 0;
-//TODO click event on marker : add class (popped-up or something) to popup container
-//TODO click event on marker : use variables you made below for creating the popup to change the inner HTML of the title, website, description text to a template string ${} which includes the values of items in DATA_ITIN2 (title, place, website etc.); e.g. ${DATA_ITIN2.items[i].image}
-//TODO in SCSS set class .popped-up to full height
-//TODO close pop up when X clicked
-// TODO link legend list items with markers on map
-// TODO Choose right marker for each marker (put marker files in an array and associate no 1 with first marker etc.)
-// Generate the popup container
-// function createPopup() {}
+// Générer les éléments HTML du popup
 
 const popupContainer = document.querySelector(".popup-container");
 const popupContainerThumb = document.createElement("div");
@@ -280,7 +400,6 @@ const p1 = document.createElement("p");
 const p2 = document.createElement("p");
 p1.innerText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
 p2.innerText = ``;
-//! for click event below : if p2 innerText = ``, then display none
 popupContainerDescription.appendChild(p1, p2);
 const popupContainerWebsite = document.createElement("div");
 popupContainerWebsite.className = "popup-container__website";
@@ -294,31 +413,31 @@ url.innerText = `l'URL va ici`;
 popupContainerWebsite.appendChild(popupContainerGlobe);
 popupContainerWebsite.appendChild(url);
 
+// cacher le popup lors du chargement de la page
 console.log(popupContainer);
 popupContainer.style.display  = 'none';
 popupContainer.style.opacity = '0';
-// popupContainer.style.display = 'none';
 
-// Create an array to store each marker's reference. Call this array markers.
-let markers = [];
-let imgSrc = 
-// create an index for each marker
-// create markers
-DATA_ITIN2.items.forEach((item, i) => 
-markers[i] = L.marker([item.lat,item.lng], { icon: mk1},).addTo(map)
-// when card is clicked, alert latitud
+// Création des marqueurs
+//! Je n'ai pas réussi à trouver comment boucler le tableau des marqueurs pour que le premier marqueur corresponde au premier point de l'itinéraire, le deuxième marqueur au deuxième point, etc.
+
+
+for (let i = 0; i < DATA_ITIN_1.items.length; i++) {
+    let marker = new L.marker([DATA_ITIN_1.items[i].lat,DATA_ITIN_1.items[i].lng], { icon: mk1}).addTo(map)
+// DATA_ITIN_1.items.forEach((item, i) => 
+// markers[i] = L.marker([item.lat,item.lng], { icon: mk1}).addTo(map)
 .on('click', function () {
 
-        // create the template of the popup box
-        popupContainerImg.setAttribute("src", `${DATA_ITIN2.items[i].image}`);
-        popupContainerImg.setAttribute("alt", `${DATA_ITIN2.items[i].alt}`);
-        popupContainerTitle.innerText = `${DATA_ITIN2.items[i].lieu}`;
-        popupContainerDescription.innerHTML = `<p>${DATA_ITIN2.items[i].description}</p>`;
-        url.href = `${DATA_ITIN2.items[i].url}`;
-        url.innerText = `${DATA_ITIN2.items[i].website}`;
-        // add or remove class 'show-popup' to popupContainer when marker is clicked
+    // insérer les données de DATA_ITIN_1 dans le popup pour chaque point
+        popupContainerImg.setAttribute("src", `${DATA_ITIN_1.items[i].image}`);
+        popupContainerImg.setAttribute("alt", `${DATA_ITIN_1.items[i].alt}`);
+        popupContainerTitle.innerText = `${DATA_ITIN_1.items[i].lieu}`;
+        popupContainerDescription.innerHTML = `<p>${DATA_ITIN_1.items[i].description}</p>`;
+        url.href = `${DATA_ITIN_1.items[i].url}`;
+        url.innerText = `${DATA_ITIN_1.items[i].website}`;
+       // ajout/suppression de la classe 'show-popup' au popupContainer lorsque le marqueur est cliqué.
         popupContainer.classList.toggle('show-popup')
-        // if popupContainer contains the class 'show-popup', make it display:flex, opacity: 1;
+        // si popupContainer contient la classe "show-popup", display: flex; opacité : 1 ;
         if (popupContainer.classList.contains("show-popup")) {
         popupContainer.style.display = 'flex'   
             setTimeout(function () {
@@ -326,16 +445,16 @@ markers[i] = L.marker([item.lat,item.lng], { icon: mk1},).addTo(map)
           }, 100);
           popupContainer.style.transitionDuration = "1s";}
 
-          // but if popupContainer doesn't contain the class 'show-popup', don't display it and set opacity to zero
+          // sinon, display: none; opacité : 0 ;
           else {
             popupContainer.style.opacity = 0;
             popupContainer.style.display = 'none';
             popupContainer.style.transitionDuration = "1s";
       }
     }
-))
+)
 
-// remove class 'show-popup', display: none, set opacity to zero
+// retirer la classe 'show-popup', display: none, opacity: 0
 popupContainerXWrap.addEventListener('click', function () {
     popupContainer.classList.remove('show-popup');
         popupContainer.style.opacity = 0;
@@ -343,31 +462,4 @@ popupContainerXWrap.addEventListener('click', function () {
         popupContainer.style.transitionDuration = "1s";
     }
    //! why won't it fade out?
-) 
-
-  // La div popup où je veux afficher les données pour chaque point sur la carte, tirées de DATA_ITIN1 (dans json1.js)
-  const popupX = document.querySelector(".popup-container__x");
-
-console.log(markers);
-console.log(DATA_ITIN2.items)
-
-//create dynamic variable
-function dynamicVar(){
-    var ele = [];
-    for (var i = 0; i < DATA_ITIN2.length; ++i) {
-    ele[i] = DATA_ITIN2[i];
-console.log(ele)}};
-
-
-dynamicVar();
-
-
-// businesses.forEach((element, i) => 
-//    markers[i] = L.marker([element.coords[0],element.coords[1]]).addTo(mymap)
-//    .bindPopup("<strong>"+element.name+"</strong>"));
-// create a marker without a popup 
-
-
-// DATA_ITIN2.forEach((element, i) => 
-//    markers2[i] = L.marker([element.lat,element.lng]).addTo(map)
-//    .bindPopup("<strong>"+element.lieu+"</strong>"));
+)}
