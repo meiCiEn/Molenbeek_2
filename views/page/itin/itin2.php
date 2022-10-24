@@ -17,7 +17,7 @@ echo $path;
 	<div id="popup-card" class="popup-card"></div>
 	<div class="legend-page-wrapper minimise-legende">
 
-		<div class="title-box">
+		<div class="title-box title-box--blue">
 			<div class="tab-wrapper">
 				<div class="tab tab--desktop minimise-text">Minimiser légende</div>
 			</div>
