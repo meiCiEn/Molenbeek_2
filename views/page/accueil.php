@@ -9,11 +9,18 @@
     // Append the requested resource location to the URL   
     $url.= $_SERVER['REQUEST_URI'];    
 ?>
+
+<?php
+    $path = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
+    $path .=$_SERVER["SERVER_NAME"]. dirname($_SERVER["PHP_SELF"]);        
+    echo $path;
+
+# Utiliser <?php echo $path . " "; pour des liens ?>
 <main>
 		<section id="intro">
 			<!-- <div id="wrapper"> -->
 			<div id="intro-title">
-				<img src="./assets/img/logos/logo-thin.svg" alt="Molenbeek en promenade">
+				<img src="<?php echo $path . "assets/img/logos/logo-thin.svg"?>;" alt="Molenbeek en promenade">
 			</div>
 			<div id="intro-img">
 				<img id="cityscape" src="./assets/img/illustrations/Molenbeek-scene-mobile-outline.svg"
