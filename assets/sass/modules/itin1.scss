@@ -92,7 +92,7 @@ z-index: -1;
     
 }
 
-#mapid1
+#mapid1, #mapid2
 { 
     height: 100vh; 
     width: 100%;
@@ -100,12 +100,6 @@ z-index: -1;
     z-index: 0;
 }
 
-#mapid2
-{ 
-    height: 900px; 
-    width: 30vh;
-    padding: 10px;
-}
 
 .map2
 {
@@ -315,4 +309,9 @@ p {
   width: 100%;}
 .popup-container__website a {
   max-width: 250px;
+}
+
+.popup-container {
+  /* top: 0; */
+  top: 120px;
 }

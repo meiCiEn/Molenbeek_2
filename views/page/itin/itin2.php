@@ -1,69 +1,39 @@
-	<main>
+//
+<?php
+// trouve le chemin du serveur et du répertoire racine
+$path = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
+$path .= $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]);
+echo $path;
+
+// Utiliser <?php echo $path . "... "; pour des liens 
+?>
+
+<section class="section">
+
+	<div class="map-container">
+		<!--<div id="map" class="map"></div>-->
+		<div id="mapid2" class="container-fluid"></div>
+	</div>
+	<div id="popup-card" class="popup-card"></div>
+	<div class="legend-page-wrapper minimise-legende">
+
+		<div class="title-box">
+			<div class="tab-wrapper">
+				<div class="tab tab--desktop minimise-text">Minimiser légende</div>
+			</div>
+			<h3>
+				Molenbeek Maritime (5 km)
+			</h3>
+		</div>
+		<div class="points-list">
+		</div>
+	</div>
 
 
-		<section class="map2">
+	<div class="popup-container">
+	</div>
 
-			<h3>Promenade maritime </h3>
+</section>
 
-			<div id="mapid2" class="container-fluid"></div>
-
-
-
-			<h4 class="title">Voici les différents points d'intérêts :</h4>
-
-			<ol>
-				<span class="clickable" id="stationMetroComteDeFlandre">
-					<li>Station métro Comte de Flandre</li>
-				</span>
-				<span class="clickable" id="administrationCommunale">
-					<li>Administration communale</li>
-				</span>
-				<span class="clickable" id="laFlammeDeLespoir">
-					<li>La flamme de l'espoir</li>
-				</span>
-				<span class="clickable" id="placeCommunale">
-					<li>Place communale</li>
-				</span>
-				<span class="clickable" id="rueFin">
-					<li>Rue Fin</li>
-				</span>
-				<span class="clickable" id="laFonderie">
-					<li>La Fonderie</li>
-				</span>
-				<span class="clickable" id="parcDeLaFonderie">
-					<li>Parc de la Fonderie</li>
-				</span>
-				<span class="clickable" id="belmundoHotelBelvue">
-					<li>Belmundo / Hôtel BELVUE</li>
-				</span>
-				<span class="clickable" id="mima">
-					<li>Mima</li>
-				</span>
-				<span class="clickable" id="atelierGrootEiland">
-					<li>Atelier Groot Eiland</li>
-				</span>
-				<!-- <li>Le Phare du Canal</li>
-				<li>C'est si bon</li>
-				<li>Le Chien du Chien / Les Tissus du Chien Vert</li>
-				<li>De Vaartkapoen</li>
-				<li>Monument aux Promoteurs des Installations Maritimes</li>
-				<li>Foyer</li>
-				<li>Musée de la Migration (MMM)</li>
-				<li>Eglise St Jean-Baptiste</li>
-				<li>Académie de Dessin et des Arts Visuels</li>
-				<li>Maison des Cultures et de la Cohésion Sociale</li>
-				<li>Panaderia Bakery</li>
-				<li>Parc Bonnevie</li>
-				<li>Place de la Minoterie</li>-->
-			</ol>
-
-		</section>
-	</main>
-
-</body>
-
-</html>
-
-
-<script src="./assets/script/itin2.js" defer></script>
 <script src="./assets/script/json2.js" defer></script>
+<script src="./assets/script/itin2.js" defer></script>
