@@ -1,7 +1,26 @@
-    <main>
+<?php  
+    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
+         $url = "https://";   
+    else  
+         $url = "http://";   
+    // Append the host(domain name, ip) to the URL.   
+    $url.= $_SERVER['HTTP_HOST'];   
+    
+    // Append the requested resource location to the URL   
+    $url.= $_SERVER['REQUEST_URI'];    
+?>
+
+<?php
+    $path = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
+    $path .=$_SERVER["SERVER_NAME"]. dirname($_SERVER["PHP_SELF"]);        
+    echo $path;
+
+# Utiliser <?php echo $path . " "; pour des liens ?>
+
+<main>
         <div id="page-wrapper">
             <div class="top-photo">
-                <img src="assets/img/itinéraire-maritime/maritime-lg/cyclist.jpg" alt="cycliste">
+                <img src="<?php echo $path . "/assets/img/itin-maritime/maritime-lg/cyclist.jpg"?>" alt="cycliste">
             </div>
             <section>
                 <h2>Le Projet</h2>
