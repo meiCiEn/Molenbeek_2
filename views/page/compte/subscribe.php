@@ -1,8 +1,8 @@
  <?php
 session_start();//Création de la session
 
-$baseDeDonnees = new PDO('mysql:host=lacalhost;dbname=membres;charset=utf8;', 'root', 'root');
-//$baseDeDonnees = 'membres.sql';
+//$baseDeDonnees = new PDO('mysql:host=lacalhost;dbname=users;charset=utf8;', 'root', 'root');
+$baseDeDonnees = 'users.sql';
 
 if(isset($_POST['Enregistrer'])){
 
